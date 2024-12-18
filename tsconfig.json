@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "es2015"],
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "module": "esnext",
+    "strict": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./src",                          // 设置为项目根目录
+      "paths": {
+        "@/*": ["*"]                          // 将 @ 映射到 src 目录
+    },
+  },
+  "include": ["src/**/*", "index.d.ts"]
+}
