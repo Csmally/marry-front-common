@@ -5,6 +5,8 @@ enum PAGE_PATH {
 }
 
 interface MainCtxTypes {
+  currentScreenStatus: boolean;
+  setCurrentScreenStatus: (status: boolean) => void;
   currentPage: PAGE_PATH;
   setCurrentPage: (path: PAGE_PATH) => void;
 }

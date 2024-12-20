@@ -8,9 +8,25 @@
     justify-content: center;
     align-items: center;
 }
+.content {
+    display: flex;
+    gap: 15px;
+}
 .mainText {
     font-size: 130px;
     font-family: 'Love';
     color: #ffffff;
-    letter-spacing: 20px;
+}
+.mainText1 {
+    font-size: 130px;
+    font-family: 'Love';
+    color: #ffffff;
+    position: relative;
+}
+.coupleImg {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: -5px;
+    left: 0;
 }

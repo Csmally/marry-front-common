@@ -1,0 +1,31 @@
+
+.container {
+    opacity: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    box-sizing: border-box;
+    color: #fff;
+}
+.container:hover {
+    opacity: 1;
+    background: rgb(138, 138, 138, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    box-sizing: border-box;
+    color: #fff;
+}
+.icon {
+    width: 30px;
+    aspect-ratio: 1;
+    cursor: pointer;
+}
