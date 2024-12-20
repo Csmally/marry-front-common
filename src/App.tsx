@@ -1,6 +1,6 @@
 import { memo, ReactNode, useEffect, useState } from "react";
-import OlRouter from "@/components/olRouter";
-import ControllerBar from "@/components/controllerBar";
+import OlRouter from "@/components/OlRouter";
+import ControllerBar from "@/components/ControllerBar";
 import { MainCtxTypes, PAGE_PATH } from "@/types/main";
 import { MainCtx } from "@/utils/ctxs";
 

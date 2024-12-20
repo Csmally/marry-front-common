@@ -8,7 +8,7 @@ declare module "*.png" {
   export default value;
 }
 
-declare module "*.jpeg" {
+declare module "*.lottie" {
   const value: string;
   export default value;
 }

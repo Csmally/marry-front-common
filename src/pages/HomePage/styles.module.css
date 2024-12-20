@@ -7,17 +7,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 .content {
     display: flex;
     gap: 15px;
+    position: relative;
 }
 .mainText {
-    font-size: 130px;
-    font-family: 'Love';
-    color: #ffffff;
-}
-.mainText1 {
     font-size: 130px;
     font-family: 'Love';
     color: #ffffff;
@@ -29,4 +26,14 @@
     position: absolute;
     top: -5px;
     left: 0;
+}
+.elecContainer {
+    position: absolute;
+    top: -95px;
+    left: 0;
+}
+.loveChatContainer {
+    position: absolute;
+    top: -280px;
+    left: 68px;
 }
