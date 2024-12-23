@@ -1,0 +1,38 @@
+@import '@/fonts.css';
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.borderLT {
+    width: 150px;
+    height: 150px;
+    border-top-width: 10px;
+    border-top-color: #fff;
+    border-left-width: 10px;
+    border-left-color: #fff;
+    border-style: solid;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    border-top-left-radius: 20px;
+}
+.borderRB {
+    width: 150px;
+    height: 150px;
+    border-bottom-width: 10px;
+    border-bottom-color: #fff;
+    border-right-width: 10px;
+    border-right-color: #fff;
+    border-style: solid;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    border-bottom-right-radius: 20px;
+}

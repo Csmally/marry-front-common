@@ -1,6 +1,7 @@
 import { memo, useCallback, useContext } from "react";
 import * as styles from "./styles.module.css";
 import home from "@/assets/imgs/home.png";
+import movie from "@/assets/imgs/movie.png";
 import photo from "@/assets/imgs/photo.png";
 import gift from "@/assets/imgs/gift.png";
 import enlarge from "@/assets/imgs/enlarge.png";
@@ -39,6 +40,11 @@ const ControllerBar: React.FC = () => {
         src={home}
         className={styles.icon}
         onClick={() => jumpTo(PAGE_PATH.HOME)}
+      />
+      <img
+        src={movie}
+        className={styles.icon}
+        onClick={() => jumpTo(PAGE_PATH.MOVIE)}
       />
       <img
         src={photo}

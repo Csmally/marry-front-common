@@ -13,6 +13,21 @@ declare module "*.lottie" {
   export default value;
 }
 
+declare module "*.mp3" {
+  const value: any;
+  export default value;
+}
+
+declare module "*.flac" {
+  const value: any;
+  export default value;
+}
+
+declare module "*.gif" {
+  const value: any;
+  export default value;
+}
+
 declare module "*.css" {
   const value: { [key: string]: string };
   export = value;

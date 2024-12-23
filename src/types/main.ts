@@ -1,5 +1,6 @@
 enum PAGE_PATH {
   HOME = "HOME",
+  MOVIE = "MOVIE",
   GIFT = "GIFT",
   PTHOTO = "PHOTO",
 }

@@ -37,3 +37,22 @@
     top: -280px;
     left: 68px;
 }
+
+.lbxx {
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    bottom: 50px;
+    left: 0;
+    animation: lbxxmove 6s linear infinite alternate;
+    cursor: pointer;
+}
+
+@keyframes lbxxmove {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: calc(100% - 80px);
+    }
+}
