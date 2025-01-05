@@ -23,7 +23,10 @@ const Chat: React.FC<ChatPropsType> = (props) => {
       style={{ top: `${getRandom()}vh` }}
       onAnimationEnd={destroyDom}
     >
-      <img src={chat.avatar} className={styles.chatAvatar} />
+      <img
+        src={chat.avatar || chat.avatar["User.avatar"]}
+        className={styles.chatAvatar}
+      />
       <div
         style={{ color: chat.bgColor || "#000000" }}
         className={styles.chatText}
