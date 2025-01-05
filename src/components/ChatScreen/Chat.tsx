@@ -24,7 +24,7 @@ const Chat: React.FC<ChatPropsType> = (props) => {
       onAnimationEnd={destroyDom}
     >
       <img
-        src={chat.avatar || chat.avatar["User.avatar"]}
+        src={chat.avatar || chat["User.avatar"]}
         className={styles.chatAvatar}
       />
       <div
