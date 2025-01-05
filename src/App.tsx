@@ -3,6 +3,7 @@ import OlRouter from "@/components/OlRouter";
 import ControllerBar from "@/components/ControllerBar";
 import { MainCtxTypes, PAGE_PATH } from "@/types/main";
 import { MainCtx } from "@/utils/ctxs";
+import ChatScreen from "@/components/ChatScreen";
 
 interface MainCtxContainerPropsType {
   children: ReactNode;
@@ -32,6 +33,7 @@ const App: React.FC = () => {
   return (
     <MainCtxContainer>
       <OlRouter />
+      <ChatScreen />
       <ControllerBar />
     </MainCtxContainer>
   );
