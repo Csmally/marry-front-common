@@ -2,6 +2,7 @@ import { memo, useRef, useState } from "react";
 import * as styles from "./styles.module.css";
 import LottiePlayer, { LottiePlayerPropsType } from "@/components/LottiePlayer";
 import countDownJson from "@/assets/lottieJson/countDown.json";
+import MovieWidget from "@/components/MovieWidget";
 
 const MoviePage: React.FC = () => {
   const [showLottiePlayer, setShowLottiePlayer] = useState(true);
@@ -27,6 +28,7 @@ const MoviePage: React.FC = () => {
     <div className={styles.container}>
       <div className={styles.borderLT}></div>
       <div className={styles.borderRB}></div>
+      {!showLottiePlayer && <MovieWidget />}
       {showLottiePlayer && <LottiePlayer {...CountDownProps} />}
       <audio
         ref={bgVoiceRef}
