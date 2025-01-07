@@ -2,3 +2,8 @@
     font-family: 'Love';
     src: url('/public/fonts/Love.woff2');
 }
+
+@font-face {
+    font-family: 'Speak';
+    src: url('/public/fonts/Speak.woff2');
+}

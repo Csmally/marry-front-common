@@ -3,6 +3,7 @@ import * as styles from "./styles.module.css";
 import LottiePlayer, { LottiePlayerPropsType } from "@/components/LottiePlayer";
 import countDownJson from "@/assets/lottieJson/countDown.json";
 import MovieWidget from "@/components/MovieWidget";
+import { MoviePageCtx } from "@/utils/ctxs";
 
 const MoviePage: React.FC = () => {
   const [showLottiePlayer, setShowLottiePlayer] = useState(true);
@@ -19,22 +20,24 @@ const MoviePage: React.FC = () => {
         eventName: "complete",
         callback: () => {
           setShowLottiePlayer(false);
-          bgVoiceRef.current?.play();
         },
       },
     ],
   };
+  const ctxValue = { bgVoiceRef };
   return (
-    <div className={styles.container}>
-      <div className={styles.borderLT}></div>
-      <div className={styles.borderRB}></div>
-      {!showLottiePlayer && <MovieWidget />}
-      {showLottiePlayer && <LottiePlayer {...CountDownProps} />}
-      <audio
-        ref={bgVoiceRef}
-        src="https://www.onelight.ink/assets/songs/loveMovie.flac"
-      />
-    </div>
+    <MoviePageCtx.Provider value={ctxValue}>
+      <div className={styles.container}>
+        <div className={styles.borderLT}></div>
+        <div className={styles.borderRB}></div>
+        {!showLottiePlayer && <MovieWidget />}
+        {showLottiePlayer && <LottiePlayer {...CountDownProps} />}
+        <audio
+          ref={bgVoiceRef}
+          src="https://www.onelight.ink/assets/songs/loveMovie.flac"
+        />
+      </div>
+    </MoviePageCtx.Provider>
   );
 };
 

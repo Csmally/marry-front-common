@@ -1,6 +1,14 @@
-import { memo, useCallback, useEffect, useRef, useState } from "react";
+import {
+  memo,
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { ENUM_MediaType, MovieScreenDataType } from "./movieData";
 import * as styles from "./styles.module.css";
+import { MoviePageCtx } from "@/utils/ctxs";
 
 interface MovieScreenPropsType {
   selfIndex: number;
@@ -11,6 +19,7 @@ interface MovieScreenPropsType {
 
 const MovieScreen: React.FC<MovieScreenPropsType> = (props) => {
   const { selfIndex, currentScreenIndex, screenData, setCurrentScreen } = props;
+  const { bgVoiceRef } = useContext(MoviePageCtx);
   const {
     cnContent,
     enContent,
@@ -19,10 +28,13 @@ const MovieScreen: React.FC<MovieScreenPropsType> = (props) => {
     mediaType,
     mediaUrl,
     isEnd,
-    musicText,
-    speakText,
+    musicText1,
+    musicText2,
+    speakText1,
+    speakText2,
     mediaHorizontal,
     rotate,
+    startBgMusic,
   } = screenData;
   const [show, setShow] = useState(true);
   const timerRef = useRef(null);
@@ -46,6 +58,11 @@ const MovieScreen: React.FC<MovieScreenPropsType> = (props) => {
       }
     };
   }, []);
+  useEffect(() => {
+    if (startBgMusic && selfIndex === currentScreenIndex) {
+      bgVoiceRef.current?.play();
+    }
+  }, [bgVoiceRef, currentScreenIndex, selfIndex, startBgMusic]);
   if (selfIndex !== currentScreenIndex) return null;
   if (!hasMedia) {
     return (
@@ -84,8 +101,14 @@ const MovieScreen: React.FC<MovieScreenPropsType> = (props) => {
           {mediaType === ENUM_MediaType.VIDEO && <div>视频</div>}
         </div>
         <div className={styles.mediaContainerR}>
-          <div>{musicText}</div>
-          <div>{speakText}</div>
+          <div className={styles.musicTextContainer}>
+            <div className={styles.musicText1}>{musicText1}</div>
+            <div className={styles.musicText2}>{musicText2}</div>
+          </div>
+          <div className={styles.speakTextContainer}>
+            <div className={styles.speakText1}>{speakText1}</div>
+            <div>{speakText2}</div>
+          </div>
         </div>
       </div>
     );

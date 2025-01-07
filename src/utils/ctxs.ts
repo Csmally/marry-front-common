@@ -8,4 +8,8 @@ const MainCtx = createContext<MainCtxTypes>({
   setCurrentPage: () => {},
 });
 
-export { MainCtx };
+const MoviePageCtx = createContext({
+  bgVoiceRef: null,
+});
+
+export { MainCtx, MoviePageCtx };
