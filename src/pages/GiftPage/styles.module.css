@@ -1,0 +1,46 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    background: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: linear-gradient(-20deg, #ddd6f3 0%, #faaca8 100%, #faaca8 100%);
+}
+
+.planeHeartBox {
+    position: absolute;
+    top: 0;
+    right: 20px;
+}
+.moreHeartBox {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.heartGiftBox {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+.giftMachineContainer {
+    position: relative;
+}
+.giftMachineInnerLBox {
+    position: absolute;
+    top: 30%;
+    transform: rotate(-45deg);
+}
+.giftMachineInnerRBox {
+    position: absolute;
+    top: 30%;
+    right: 0;
+    transform: rotate(45deg);
+}
+.giftBoxBox {
+    position: absolute;
+    left: 0;
+    bottom: -80px;
+    /* background: green; */
+}
