@@ -46,6 +46,11 @@
     left: 0;
     animation: lbxxmove 6s linear infinite alternate;
     cursor: pointer;
+    animation-play-state: running;
+}
+
+.lbxx:hover {
+    animation-play-state: paused;
 }
 
 @keyframes lbxxmove {

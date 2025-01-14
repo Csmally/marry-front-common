@@ -98,7 +98,6 @@ const MovieScreen: React.FC<MovieScreenPropsType> = (props) => {
               src={mediaUrl}
             />
           )}
-          {mediaType === ENUM_MediaType.VIDEO && <div>视频</div>}
         </div>
         <div className={styles.mediaContainerR}>
           <div className={styles.musicTextContainer}>
