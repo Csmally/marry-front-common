@@ -9,21 +9,28 @@
     background: linear-gradient(-20deg, #ddd6f3 0%, #faaca8 100%, #faaca8 100%);
 }
 
-.planeHeartBox {
+.topAnimationBar {
+    width: 100vw;
     position: absolute;
     top: 0;
-    right: 20px;
+    display: flex;
+    justify-content: space-between;
 }
+
+.bottomAnimationBar {
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
 .moreHeartBox {
     position: absolute;
     top: 0;
     right: 0;
 }
-.heartGiftBox {
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-}
+
 .giftMachineContainer {
     position: relative;
 }
@@ -37,10 +44,4 @@
     top: 30%;
     right: 0;
     transform: rotate(45deg);
-}
-.giftBoxBox {
-    position: absolute;
-    left: 0;
-    bottom: -80px;
-    /* background: green; */
 }
