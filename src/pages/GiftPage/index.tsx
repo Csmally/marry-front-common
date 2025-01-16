@@ -80,42 +80,48 @@ const GiftPage: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
   const giftUserRef = useRef(null);
   // 左边-弹幕-抽奖机
-  const giftMachineLProps: LottiePlayerPropsType = useMemo(() => ({
-    options: {
-      animationData: giftMachine,
-      autoplay: false,
-    },
-    width: "70vh",
-    height: "70vh",
-    eventListeners: [
-      {
-        eventName: 'loopComplete',
-        callback: () => {
-          machnieLRef.current.stop?.();
-          if (giftUserRef.current) {
-            setShowModal(true);
-          }
-        }
-      }
-    ]
-  }), []);
+  const giftMachineLProps: LottiePlayerPropsType = useMemo(
+    () => ({
+      options: {
+        animationData: giftMachine,
+        autoplay: false,
+      },
+      width: "70vh",
+      height: "70vh",
+      eventListeners: [
+        {
+          eventName: "loopComplete",
+          callback: () => {
+            machnieLRef.current.stop?.();
+            if (giftUserRef.current) {
+              setShowModal(true);
+            }
+          },
+        },
+      ],
+    }),
+    []
+  );
   // 右边-图片-抽奖机
-  const giftMachineRProps: LottiePlayerPropsType = useMemo(() => ({
-    options: {
-      animationData: giftMachine,
-      autoplay: false,
-    },
-    width: "70vh",
-    height: "70vh",
-    eventListeners: [
-      {
-        eventName: 'loopComplete',
-        callback: () => {
-          machnieRRef.current.stop?.();
-        }
-      }
-    ]
-  }), []);
+  const giftMachineRProps: LottiePlayerPropsType = useMemo(
+    () => ({
+      options: {
+        animationData: giftMachine,
+        autoplay: false,
+      },
+      width: "70vh",
+      height: "70vh",
+      eventListeners: [
+        {
+          eventName: "loopComplete",
+          callback: () => {
+            machnieRRef.current.stop?.();
+          },
+        },
+      ],
+    }),
+    []
+  );
   // 请求抽奖接口
   const getRandomGiftUser = useCallback(async (type: number) => {
     const { success, data } = await fetchRandomGiftUser(type);
@@ -127,7 +133,7 @@ const GiftPage: React.FC = () => {
     machnieLRef.current.play?.();
     getRandomGiftUser(1);
   }, [getRandomGiftUser]);
-  
+
   const getGiftByPhoto = useCallback(() => {
     machnieRRef.current.play?.();
     getRandomGiftUser(2);
@@ -143,23 +149,22 @@ const GiftPage: React.FC = () => {
         <LottiePlayer {...loveChat1Props} />
         <LottiePlayer {...planeHeartProps} />
       </div>
-      
 
       {/* 中间主图 */}
       <div className={styles.giftMachineContainer} onClick={getGiftByChat}>
         <LottiePlayer {...chatHeartProps} />
-        <LottiePlayer {...giftMachineLProps} ref={machnieLRef}/>
+        <LottiePlayer {...giftMachineLProps} ref={machnieLRef} />
       </div>
       <div className={styles.giftMachineContainer} onClick={getGiftByPhoto}>
         <LottiePlayer {...photoCameraProps} />
-        <LottiePlayer {...giftMachineRProps} ref={machnieRRef}/>
+        <LottiePlayer {...giftMachineRProps} ref={machnieRRef} />
       </div>
-      
+
       <div className={styles.bottomAnimationBar}>
         <LottiePlayer {...heartGiftProps} />
         <LottiePlayer {...giftBoxProps} />
       </div>
-      
+
       {showModal && <GiftModal closeModal={closeModal} userRef={giftUserRef} />}
     </div>
   );
