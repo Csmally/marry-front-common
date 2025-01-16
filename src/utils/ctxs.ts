@@ -1,4 +1,9 @@
-import { MainCtxTypes, PAGE_PATH, PageCtxTypes } from "@/types/main";
+import {
+  ChatCtxTypes,
+  MainCtxTypes,
+  PAGE_PATH,
+  PageCtxTypes,
+} from "@/types/main";
 import { createContext } from "react";
 
 const MainCtx = createContext<MainCtxTypes>({
@@ -11,8 +16,10 @@ const PageCtx = createContext<PageCtxTypes>({
   setCurrentPage: () => {},
 });
 
+const SseCtx = createContext<ChatCtxTypes>({ chats: [] });
+
 const MoviePageCtx = createContext({
   bgVoiceRef: null,
 });
 
-export { MainCtx, PageCtx, MoviePageCtx };
+export { MainCtx, PageCtx, SseCtx, MoviePageCtx };

@@ -1,3 +1,5 @@
+import { ChatType } from "./interfaces";
+
 enum PAGE_PATH {
   HOME = "HOME",
   MOVIE = "MOVIE",
@@ -15,4 +17,8 @@ interface PageCtxTypes {
   setCurrentPage: (path: PAGE_PATH) => void;
 }
 
-export { PAGE_PATH, PageCtxTypes, MainCtxTypes };
+interface ChatCtxTypes {
+  chats: ChatType[];
+}
+
+export { PAGE_PATH, PageCtxTypes, MainCtxTypes, ChatCtxTypes };
