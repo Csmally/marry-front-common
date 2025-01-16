@@ -1,4 +1,4 @@
-import { ChatType } from "./interfaces";
+import { ReactNode } from "react";
 
 enum PAGE_PATH {
   HOME = "HOME",
@@ -7,18 +7,8 @@ enum PAGE_PATH {
   PTHOTO = "PHOTO",
 }
 
-interface MainCtxTypes {
-  currentScreenStatus: boolean;
-  setCurrentScreenStatus: (status: boolean) => void;
+interface ReactFCPropsType {
+  children: ReactNode;
 }
 
-interface PageCtxTypes {
-  currentPage: PAGE_PATH;
-  setCurrentPage: (path: PAGE_PATH) => void;
-}
-
-interface ChatCtxTypes {
-  chats: ChatType[];
-}
-
-export { PAGE_PATH, PageCtxTypes, MainCtxTypes, ChatCtxTypes };
+export { PAGE_PATH, ReactFCPropsType };

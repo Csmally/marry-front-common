@@ -1,10 +1,10 @@
 import { memo, useContext } from "react";
 import * as styles from "./styles.module.css";
 import Chat from "./Chat";
-import { SseCtx } from "@/utils/ctxs";
+import { ChatsCtx } from "@/utils/ctxs";
 
 const ChatScreen: React.FC = () => {
-  const { chats } = useContext(SseCtx);
+  const { chats } = useContext(ChatsCtx);
   return (
     <div className={styles.container}>
       {chats.map((chat, index) => (

@@ -1,9 +1,11 @@
 import {
   ChatCtxTypes,
   MainCtxTypes,
-  PAGE_PATH,
   PageCtxTypes,
-} from "@/types/main";
+  PhotoCtxTypes,
+  SseCtxTypes,
+} from "@/types/interfaces";
+import { PAGE_PATH } from "@/types/main";
 import { createContext } from "react";
 
 const MainCtx = createContext<MainCtxTypes>({
@@ -16,10 +18,12 @@ const PageCtx = createContext<PageCtxTypes>({
   setCurrentPage: () => {},
 });
 
-const SseCtx = createContext<ChatCtxTypes>({ chats: [] });
+const SseCtx = createContext<SseCtxTypes>({ sseClient: null });
 
-const MoviePageCtx = createContext({
-  bgVoiceRef: null,
-});
+const ChatsCtx = createContext<ChatCtxTypes>({ chats: [] });
 
-export { MainCtx, PageCtx, SseCtx, MoviePageCtx };
+const PhotoCtx = createContext<PhotoCtxTypes>({ photos: [] });
+
+const MoviePageCtx = createContext({ bgVoiceRef: null });
+
+export { MainCtx, PageCtx, SseCtx, ChatsCtx, PhotoCtx, MoviePageCtx };
