@@ -33,6 +33,7 @@
 
 .giftMachineContainer {
     position: relative;
+    cursor: pointer;
 }
 .giftMachineInnerLBox {
     position: absolute;
@@ -44,4 +45,19 @@
     top: 30%;
     right: 0;
     transform: rotate(45deg);
+}
+.modalContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.congratulateBox {
+    
 }

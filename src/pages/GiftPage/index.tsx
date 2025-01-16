@@ -1,4 +1,4 @@
-import { memo, useRef } from "react";
+import { memo, useCallback, useMemo, useRef, useState } from "react";
 import * as styles from "./styles.module.css";
 import LottiePlayer, { LottiePlayerPropsType } from "@/components/LottiePlayer";
 import planeHeart from "@/assets/lottieJson/planeHeart.json";
@@ -9,6 +9,8 @@ import photoCamera from "@/assets/lottieJson/photoCamera.json";
 import giftBox from "@/assets/lottieJson/giftBox.json";
 import loveText from "@/assets/lottieJson/loveText.json";
 import loveChat1 from "@/assets/lottieJson/loveChat1.json";
+import { fetchRandomGiftUser } from "@/services";
+import GiftModal from "./GiftModal";
 
 // 右上角桃心飞机
 const planeHeartProps: LottiePlayerPropsType = {
@@ -48,15 +50,6 @@ const photoCameraProps: LottiePlayerPropsType = {
   height: 100,
 };
 
-// 右边-图片-抽奖机
-const giftMachineRProps: LottiePlayerPropsType = {
-  options: {
-    animationData: giftMachine,
-  },
-  width: "70vh",
-  height: "70vh",
-};
-
 const giftBoxProps: LottiePlayerPropsType = {
   options: {
     animationData: giftBox,
@@ -82,9 +75,12 @@ const loveChat1Props: LottiePlayerPropsType = {
 };
 
 const GiftPage: React.FC = () => {
-  const machnieRef = useRef(null);
+  const machnieLRef = useRef(null);
+  const machnieRRef = useRef(null);
+  const [showModal, setShowModal] = useState(false);
+  const giftUserRef = useRef(null);
   // 左边-弹幕-抽奖机
-  const giftMachineLProps: LottiePlayerPropsType = {
+  const giftMachineLProps: LottiePlayerPropsType = useMemo(() => ({
     options: {
       animationData: giftMachine,
       autoplay: false,
@@ -95,38 +91,76 @@ const GiftPage: React.FC = () => {
       {
         eventName: 'loopComplete',
         callback: () => {
-          machnieRef.current.stop();
+          machnieLRef.current.stop?.();
+          if (giftUserRef.current) {
+            setShowModal(true);
+          }
         }
       }
     ]
-  };
-  const tt = () => {
-    machnieRef.current.play();
-  };
+  }), []);
+  // 右边-图片-抽奖机
+  const giftMachineRProps: LottiePlayerPropsType = useMemo(() => ({
+    options: {
+      animationData: giftMachine,
+      autoplay: false,
+    },
+    width: "70vh",
+    height: "70vh",
+    eventListeners: [
+      {
+        eventName: 'loopComplete',
+        callback: () => {
+          machnieRRef.current.stop?.();
+        }
+      }
+    ]
+  }), []);
+  // 请求抽奖接口
+  const getRandomGiftUser = useCallback(async (type: number) => {
+    const { success, data } = await fetchRandomGiftUser(type);
+    if (success) {
+      giftUserRef.current = data;
+    }
+  }, []);
+  const getGiftByChat = useCallback(() => {
+    machnieLRef.current.play?.();
+    getRandomGiftUser(1);
+  }, [getRandomGiftUser]);
+  
+  const getGiftByPhoto = useCallback(() => {
+    machnieRRef.current.play?.();
+    getRandomGiftUser(2);
+  }, [getRandomGiftUser]);
+  const closeModal = useCallback(() => {
+    setShowModal(false);
+    giftUserRef.current = null;
+  }, []);
   return (
     <div className={styles.container}>
       <div className={styles.topAnimationBar}>
         <LottiePlayer {...loveTextProps} />
         <LottiePlayer {...loveChat1Props} />
         <LottiePlayer {...planeHeartProps} />
-        <div style={{background: 'red'}} onClick={tt}>点击</div>
       </div>
       
 
       {/* 中间主图 */}
-      <div className={styles.giftMachineContainer}>
+      <div className={styles.giftMachineContainer} onClick={getGiftByChat}>
         <LottiePlayer {...chatHeartProps} />
-        <LottiePlayer {...giftMachineLProps} ref={machnieRef}/>
+        <LottiePlayer {...giftMachineLProps} ref={machnieLRef}/>
       </div>
-      <div className={styles.giftMachineContainer}>
+      <div className={styles.giftMachineContainer} onClick={getGiftByPhoto}>
         <LottiePlayer {...photoCameraProps} />
-        <LottiePlayer {...giftMachineRProps} />
+        <LottiePlayer {...giftMachineRProps} ref={machnieRRef}/>
       </div>
       
       <div className={styles.bottomAnimationBar}>
         <LottiePlayer {...heartGiftProps} />
         <LottiePlayer {...giftBoxProps} />
       </div>
+      
+      {showModal && <GiftModal closeModal={closeModal} userRef={giftUserRef} />}
     </div>
   );
 };
