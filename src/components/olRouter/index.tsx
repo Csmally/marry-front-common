@@ -3,11 +3,11 @@ import HomePage from "@/pages/HomePage";
 import MoviePage from "@/pages/MoviePage";
 import PhotoPage from "@/pages/PhotoPage";
 import { PAGE_PATH } from "@/types/main";
-import { MainCtx } from "@/utils/ctxs";
+import { PageCtx } from "@/utils/ctxs";
 import { memo, useContext } from "react";
 
 const OlRouter: React.FC = () => {
-  const { currentPage } = useContext(MainCtx);
+  const { currentPage } = useContext(PageCtx);
   switch (currentPage) {
     case PAGE_PATH.HOME:
       return <HomePage />;

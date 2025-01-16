@@ -6,16 +6,12 @@ import photo from "@/assets/imgs/photo.png";
 import gift from "@/assets/imgs/gift.png";
 import enlarge from "@/assets/imgs/enlarge.png";
 import reduce from "@/assets/imgs/reduce.png";
-import { MainCtx } from "@/utils/ctxs";
+import { MainCtx, PageCtx } from "@/utils/ctxs";
 import { PAGE_PATH } from "@/types/main";
 
 const ControllerBar: React.FC = () => {
-  const {
-    currentScreenStatus,
-    setCurrentScreenStatus,
-    setCurrentPage,
-    currentPage,
-  } = useContext(MainCtx);
+  const { currentScreenStatus, setCurrentScreenStatus } = useContext(MainCtx);
+  const { currentPage, setCurrentPage } = useContext(PageCtx);
   const changeScreenStatus = useCallback(
     (status: boolean) => {
       if (status) {

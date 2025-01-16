@@ -8,8 +8,11 @@ enum PAGE_PATH {
 interface MainCtxTypes {
   currentScreenStatus: boolean;
   setCurrentScreenStatus: (status: boolean) => void;
+}
+
+interface PageCtxTypes {
   currentPage: PAGE_PATH;
   setCurrentPage: (path: PAGE_PATH) => void;
 }
 
-export { PAGE_PATH, MainCtxTypes };
+export { PAGE_PATH, PageCtxTypes, MainCtxTypes };

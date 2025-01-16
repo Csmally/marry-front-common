@@ -4,7 +4,7 @@ import couple from "@/assets/imgs/couple.png";
 import LottiePlayer, { LottiePlayerPropsType } from "@/components/LottiePlayer";
 import elecLottieJson from "@/assets/lottieJson/electrocardiogram.json";
 import loveChatJson from "@/assets/lottieJson/loveChat.json";
-import { MainCtx } from "@/utils/ctxs";
+import { PageCtx } from "@/utils/ctxs";
 import { PAGE_PATH } from "@/types/main";
 import lbxx from "@/assets/imgs/lbxx.gif";
 
@@ -28,7 +28,7 @@ const LoveChatProps: LottiePlayerPropsType = {
 };
 
 const HomePage: React.FC = () => {
-  const { setCurrentPage } = useContext(MainCtx);
+  const { setCurrentPage } = useContext(PageCtx);
   const lbxxRef = useRef(null);
   const lbxxVoiceRef = useRef(null);
   const [labxxEndFlag, setLabxxEndFlag] = useState(false);
