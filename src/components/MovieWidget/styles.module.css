@@ -32,8 +32,8 @@
     animation: fadeOut 1s linear forwards;
 }
 .textCnText {
-    font-size: 100px;
-    letter-spacing: 6px;
+    font-size: 85px;
+    letter-spacing: 5px;
     margin-bottom: 20px;
     font-family: "Speak";
 }
@@ -95,17 +95,17 @@
 .musicTextContainer {
   font-family: "Speak";
   font-size: 50px;
-  text-align: right;
 }
 .musicText1 {
+  text-align: right;
   margin-bottom: 20px;
 }
 .musicText2 {
-  padding-right: 100px;
+  /* padding-right: 100px; */
 }
 .speakTextContainer {
   font-family: "Love";
-  font-size: 30px;
+  font-size: 28px;
 }
 .speakText1 {
   margin-left: 50px;

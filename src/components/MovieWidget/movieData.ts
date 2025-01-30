@@ -31,7 +31,7 @@ const movieData: MovieScreenDataType[] = [
     isEnd: false,
   },
   {
-    cnContent: "很开心这一天您专程为我们而来",
+    cnContent: "很开心今天您专程为我们而来",
     enContent: "I'm so glad you could make this day just for us",
     hasMedia: false,
     timer: 5,
