@@ -116,6 +116,9 @@ const GiftPage: React.FC = () => {
           eventName: "loopComplete",
           callback: () => {
             machnieRRef.current.stop?.();
+            if (giftUserRef.current) {
+              setShowModal(true);
+            }
           },
         },
       ],
