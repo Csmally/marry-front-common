@@ -45,6 +45,7 @@ const HomePage: React.FC = () => {
   }, [labxxEndFlag]);
   return (
     <div className={styles.container}>
+      <div className={styles.textPreload}>订婚</div>
       <div className={styles.content}>
         <div className={styles.mainText}>我</div>
         <div className={styles.mainText}>们</div>
