@@ -44,9 +44,21 @@
 .photoBox {
     width: 80vh;
     height: 80vh;
-    display: flex;
-    flex-wrap: wrap;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.customerPhotoBox {
+    width: 65vh;
+    height: 55vh;
+    z-index: 1;
+    position: relative;
+}
+.customerPhotoImg {
+    position: absolute;
+    width: 80px;
+    object-fit: contain;
 }
 .photoImg {
     position: absolute;
@@ -154,6 +166,22 @@
     left: 470px;
 }
 .photoBox .photoImg:nth-child(26) {
+    top: 70px;
+    left: 120px;
+}
+.photoBox .photoImg:nth-child(27) {
+    top: 160px;
+    left: 15px;
+}
+.photoBox .photoImg:nth-child(28) {
+    top: 490px;
+    left: 260px;
+}
+.photoBox .photoImg:nth-child(29) {
+    top: 140px;
+    left: 520px;
+}
+.photoBox .photoImg:nth-child(30) {
     top: 70px;
     left: 120px;
 }

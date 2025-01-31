@@ -1,5 +1,5 @@
 import { PhotoCtx } from "@/utils/ctxs";
-import { memo, useCallback, useContext } from "react";
+import { memo, useContext } from "react";
 import * as styles from "./styles.module.css";
 import LottiePlayer, { LottiePlayerPropsType } from "@/components/LottiePlayer";
 import photo1Json from "@/assets/lottieJson/photo1.json";
@@ -9,6 +9,8 @@ import photo4Json from "@/assets/lottieJson/photo4.json";
 import photo5Json from "@/assets/lottieJson/photo5.json";
 import photo6Json from "@/assets/lottieJson/photo6.json";
 import photo7Json from "@/assets/lottieJson/photo7.json";
+import BasePhoto from "./BasePhoto";
+import CustomerPhoto from "./CustomerPhoto";
 
 const photo1Props: LottiePlayerPropsType = {
   options: {
@@ -63,9 +65,6 @@ const photo7Props: LottiePlayerPropsType = {
 
 const PhotoPage: React.FC = () => {
   const { photos } = useContext(PhotoCtx);
-  const getRandomRotate = useCallback(() => {
-    return `rotate(${Math.floor(Math.random() * 61) - 30}deg)`;
-  }, []);
   return (
     <>
       <div className={styles.container}>
@@ -89,13 +88,15 @@ const PhotoPage: React.FC = () => {
       </div>
       <div className={styles.photoContainer}>
         <div className={styles.photoBox}>
-          {photos.map((i, index) => (
-            <img
-              key={index}
-              src={i}
-              className={styles.photoImg}
-              style={{ transform: getRandomRotate() }}
-            />
+          {photos.map((item, index) => (
+            <BasePhoto key={index} photoInfo={item} />
+          ))}
+        </div>
+      </div>
+      <div className={styles.photoContainer}>
+        <div className={styles.customerPhotoBox}>
+          {photos.map((item, index) => (
+            <CustomerPhoto key={index} photoInfo={item} />
           ))}
         </div>
       </div>
