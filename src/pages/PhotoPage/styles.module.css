@@ -1,0 +1,159 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background: linear-gradient(-20deg, #ddd6f3 0%, #faaca8 100%, #faaca8 100%);
+}
+
+.topAnimationBar {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 100px;
+}
+.midAnimationBar {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 200px;
+}
+.bottomAnimationBar {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 100px;
+    align-items: flex-end;
+}
+
+.photoContainer {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.photoBox {
+    width: 80vh;
+    height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+.photoImg {
+    position: absolute;
+    width: 80px;
+    object-fit: contain;
+}
+.photoBox .photoImg:nth-child(1) {
+    top: 0;
+    left: 0;
+}
+.photoBox .photoImg:nth-child(2) {
+    top: -20px;
+    left: 90px;
+}
+.photoBox .photoImg:nth-child(3) {
+    top: -20px;
+    left: 170px;
+}
+.photoBox .photoImg:nth-child(4) {
+    top: 60px;
+    left: 200px;
+}
+.photoBox .photoImg:nth-child(5) {
+    top: 60px;
+    left: 310px;
+}
+.photoBox .photoImg:nth-child(6) {
+    top: -5px;
+    left: 370px;
+}
+.photoBox .photoImg:nth-child(7) {
+    top: -15px;
+    left: 445px;
+}
+.photoBox .photoImg:nth-child(8) {
+    top: -10px;
+    left: 540px;
+}
+.photoBox .photoImg:nth-child(9) {
+    top: 80px;
+    left: 570px;
+}
+.photoBox .photoImg:nth-child(10) {
+    top: 200px;
+    left: 580px;
+}
+.photoBox .photoImg:nth-child(11) {
+    top: 100px;
+    left: -60px;
+}
+.photoBox .photoImg:nth-child(12) {
+    top: 100px;
+    left: 260px;
+}
+.photoBox .photoImg:nth-child(13) {
+    top: 800px;
+    left: 40px;
+}
+.photoBox .photoImg:nth-child(14) {
+    top: 500px;
+    left: 290px;
+}
+.photoBox .photoImg:nth-child(15) {
+    top: 310px;
+    left: 525px;
+}
+.photoBox .photoImg:nth-child(16) {
+    top: 90px;
+    left: 30px;
+}
+.photoBox .photoImg:nth-child(17) {
+    top: 100px;
+    left: 400px;
+}
+.photoBox .photoImg:nth-child(18) {
+    top: 455px;
+    left: 370px;
+}
+.photoBox .photoImg:nth-child(19) {
+    top: 420px;
+    left: 455px;
+}
+.photoBox .photoImg:nth-child(20) {
+    top: 200px;
+    left: -50px;
+}
+.photoBox .photoImg:nth-child(21) {
+    top: 290px;
+    left: -20px;
+}
+.photoBox .photoImg:nth-child(22) {
+    top: 480px;
+    left: 180px;
+}
+.photoBox .photoImg:nth-child(23) {
+    top: 330px;
+    left: 30px;
+}
+.photoBox .photoImg:nth-child(24) {
+    top: 440px;
+    left: 90px;
+}
+.photoBox .photoImg:nth-child(25) {
+    top: 100px;
+    left: 470px;
+}
+.photoBox .photoImg:nth-child(26) {
+    top: 70px;
+    left: 120px;
+}
