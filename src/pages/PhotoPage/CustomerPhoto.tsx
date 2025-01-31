@@ -15,10 +15,10 @@ const CustomerPhoto: React.FC<CustomerPhotoPropsType> = (props) => {
     return `rotate(${Math.floor(Math.random() * 61) - 30}deg)`;
   }, []);
   const getRandomLeft = useCallback(() => {
-    return `${(Math.random() * 55).toFixed(2)}vh`;
+    return `${(Math.random() * 45).toFixed(2)}vh`;
   }, []);
   const getRandomTop = useCallback(() => {
-    return `${(Math.random() * 45).toFixed(2)}vh`;
+    return `${(Math.random() * 28).toFixed(2)}vh`;
   }, []);
   if (url && !isBaseImg) {
     return (
